@@ -1,0 +1,28 @@
+.loginBtn {
+    background: var(--colorPrimaryDark);
+    color: white !important;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 13px 30px;
+    border: none;
+    transition: all 0.4s;
+    text-transform: uppercase;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.loginBtn:hover {
+    filter: brightness(1.2);
+}
+
+.connectLoginLeft h4 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 24px;
+    color: white;
+}
+
+.connectLoginRight p {
+    margin-bottom: 30px;
+}

@@ -1,0 +1,570 @@
+:root {
+    --headerbg: #0A121D;
+    --webPrimary: #86FF00;
+    --webText: #fff;
+}
+
+body {
+    background: #0A121D !important;
+}
+
+.header {
+    color: var(--webText);
+    background-image: url(./../../Images/homebg.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-color: rgba(10, 18, 29, 0.7);
+    background-blend-mode: overlay;
+    background: linear-gradient(180deg, #0a121db2, #0A121D);
+}
+
+.themeLogo {
+    width: 130px;
+    filter: brightness(140%);
+}
+
+.headerContainer {
+    min-height: 100vh;
+}
+
+.bgImage {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgba(10, 18, 29, 0.5);
+}
+
+.btnPrimary,
+.btnSecondary {
+    color: var(--webText);
+    padding: 10px 25px;
+    border-radius: 7px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    border: 2px solid var(--webPrimary);
+    background: transparent;
+    font-weight: 700;
+    transition: all 0.5s !important;
+    display: inline-block;
+    /* clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%); */
+}
+
+.btnSecondary {
+    color: black;
+    background: var(--webPrimary);
+    border-radius: 4px;
+    border: none;
+    padding: 12px 25px;
+}
+
+.btnSecondary:hover {
+    color: black;
+    transform: translateY(-10px) !important;
+}
+
+.btnPrimary:hover {
+    background: var(--webPrimary);
+    color: black;
+}
+
+.Headertopnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.Headertopnav h1 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navLinks a {
+    display: inline-block;
+    position: relative;
+}
+
+.navLinks a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--webPrimary);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navLinks a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navLinks a {
+    margin: 0px 20px;
+    color: var(--webText);
+}
+
+.navLinks a:hover {
+    color: white;
+}
+
+.headerContent {
+    height: 100%;
+    z-index: 1 !important;
+}
+
+.headerLeft h1 {
+    font-weight: bold;
+    font-size: 55px;
+    z-index: 1 !important;
+}
+
+.headerLeft p {
+    font-weight: 300;
+    font-size: 15px;
+    z-index: 1 !important;
+    margin-bottom: 30px;
+}
+
+.headerRight img {
+    width: 100%;
+    height: 100%;
+    /* filter: brightness(170%); */
+}
+
+.secHeading {
+    font-size: 35px;
+    color: var(--webText);
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.projectCard {
+    background: #1F2935;
+    padding: 50px 10px 25px 10px;
+    border-radius: 10px;
+    color: var(--webText);
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.projectCard>h5 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.projectCard>p {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgb(151, 151, 151);
+}
+
+.projectCardValue {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.projectCardValue>p {
+    background: #172029;
+    padding: 6px;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #67788C;
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    margin-right: 5px;
+    font-weight: 800;
+}
+
+.projectCardValue>h5 {
+    background: var(--webPrimary);
+    color: black;
+    padding: 5px 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 800;
+    width: 30%;
+    text-align: right;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projectCard img {
+    width: 100px;
+    height: 100px;
+    border-radius: 30px;
+    margin-top: -130px;
+}
+
+.projectCard button {
+    background-color: gray;
+    color: var(--webText);
+    padding: 8px 20px;
+    border: none;
+    transform: translateY(45px);
+    transition: all 0.4s;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.projectCard button:hover {
+    background-color: var(--webPrimary);
+    color: black;
+}
+
+.ProjectCard {
+    padding-top: 90px;
+}
+
+.projects {
+    background-image: url();
+}
+
+
+.igoSteps {
+    text-align: center;
+}
+
+.igoSteps img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.igoSteps h3 {
+    font-size: 20px;
+    color: var(--webText);
+}
+
+.igoSteps p {
+    font-size: 14px;
+    color: rgb(145, 145, 145);
+    margin: 0;
+}
+
+.igoSteps h1 {
+    font-size: 60px;
+    color: #18202B;
+    font-weight: bold;
+}
+
+.igoRow {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.projects {
+    background-image: url('./../../Images/cloud.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(10, 18, 29, 0.4);
+    background-blend-mode: overlay;
+}
+
+.teamBg {
+    width: 150px;
+}
+
+.teamMember {
+    text-align: center;
+}
+
+.teamMember img {
+    width: 175px !important;
+    height: 175px !important;
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 30px;
+
+}
+
+.teamMember h3 {
+    color: var(--webText);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.teamMember p {
+    font-size: 14px;
+    color: rgb(163, 162, 162);
+    font-weight: 300;
+}
+
+.teamMember .socialIcons {
+    display: flex;
+    justify-content: center;
+}
+
+.teamMember .socialIcons i {
+    margin: 0px 5px;
+    color: #798EA3;
+    border: 1px solid #798EA3;
+    font-size: 22px;
+    font-weight: 700;
+    background: transparent;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px !important;
+    cursor: pointer;
+}
+
+.teamMember .socialIcons i:hover {
+    background: var(--webPrimary);
+    color: black;
+    border-color: var(--webPrimary);
+}
+
+.team {
+    padding-bottom: 50px !important;
+}
+
+.secText {
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    color: grey;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.igoData {
+    display: flex;
+    justify-content: space-between;
+    background: #1F2935;
+    border-radius: 10px;
+    align-items: center;
+    padding: 5px 20px;
+    margin-bottom: 35px;
+}
+
+.igoData img {
+    width: 60px;
+    height: 60px;
+    transform: translateY(-30px);
+    border-radius: 10px;
+}
+
+.raise p {
+    color: grey;
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.raise i {
+    color: var(--webText);
+}
+
+.raise h5 {
+    color: var(--webText);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.raiseSocialIcons {
+    display: flex;
+}
+
+.raiseSocialIcons i {
+    color: var(--webText);
+    margin: 0px 10px;
+    width: 30px;
+    height: 30px;
+    background: grey;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.raiseSocialIcons i:hover {
+    background: var(--webPrimary);
+    color: black;
+}
+
+.partners {
+    padding-bottom: 35px;
+}
+
+.partners img {
+    width: 90%;
+    margin: auto;
+}
+
+.partners .row {
+    margin-top: 10px;
+}
+
+.partners img {
+    filter: grayscale(0);
+    transition: all 0.4s;
+    margin: auto;
+    cursor: pointer;
+}
+
+.partners .pl {
+    display: flex;
+    align-items: center;
+}
+
+.partners img:hover {
+    transform: scale(1.3);
+}
+
+.team {
+    position: relative;
+}
+
+.bg2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: brightness(0.2);
+}
+
+.launchRow h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.launchRow p {
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.launch {
+    margin-top: 50px;
+}
+
+.launchContainer {
+    background-image: url('./../../Images/homebg.jpg');
+    height: 300px;
+    background-position: center center;
+    background-size: cover;
+    background-color: rgba(10, 18, 29, 0.9);
+    background-blend-mode: overlay;
+    padding: 20px;
+}
+
+.launchRow {
+    align-items: center;
+
+}
+
+.launchRow img {
+    height: 300px;
+    margin: auto;
+    transform: scale(1.5);
+    margin-top: -40px;
+}
+
+.footerSec {
+    background: black;
+}
+
+@media (max-width: 767px) {
+    .navLinks {
+        display: none;
+    }
+
+    .secHeading {
+        font-size: 30px;
+        width: 95%;
+    }
+
+    .igoData {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .headerLeft h1 {
+        font-weight: bold;
+        font-size: 35px;
+
+    }
+
+    .headerLeft {
+        text-align: center;
+    }
+
+    .headerRow {
+        padding-top: 50px;
+    }
+
+    .igoData img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .secText {
+        width: 95%;
+    }
+
+    .igoData {
+        padding: 5px 0px 20px 0;
+    }
+
+    .launchRow img {
+        display: none;
+    }
+
+    .launchContainer {
+        background-color: rgba(10, 18, 29, 0.6);
+        display: flex;
+        align-items: center;
+    }
+
+    .partners img {
+        width: 60%;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+    }
+
+    .igoData {
+        background-image: url("https://i.pinimg.com/736x/fc/43/d0/fc43d0c234c7231f0225cc270bb5c8ab.jpg");
+        background-position: center center;
+        background-size: cover;
+        background-color: rgba(10, 18, 29, 0.9);
+        background-blend-mode: overlay;
+    }
+
+    .raise p {
+        color: rgb(185, 185, 185);
+        font-size: 14px;
+    }
+
+    .raise h5 {
+        font-size: 17px;
+    }
+}

@@ -6,14 +6,16 @@
 }
 
 body {
-  background: #fff !important;
+  background: #fff;
   color: #fff;
   overflow-x: hidden !important;
+  min-height: 100vh;
 }
 
 html {
   scroll-behavior: smooth;
   overflow-x: hidden !important;
+  min-height: 100vh;
 }
 
 a {

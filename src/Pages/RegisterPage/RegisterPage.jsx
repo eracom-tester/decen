@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./RegisterPage.css"
-import { Container, Row, Col } from "react-bootstrap" 
-
+import { Container, Row, Col } from "react-bootstrap"
+import { Link } from 'react-router-dom';
 import { ethers } from 'ethers';
 
 import { useSelector, useDispatch } from 'react-redux'
@@ -15,8 +15,8 @@ const RegisterPage = () => {
     const BUSD = useSelector((state) => state.contract.value.BUSD);
     const contractABI = useSelector((state) => state.contract.value.contractABI);
     const BUSD_ABI = useSelector((state) => state.contract.value.BUSD_ABI);
-    
-     
+
+
 
     const checkWalletIsConnected = () => {
         const { ethereum } = window;
@@ -48,18 +48,18 @@ const RegisterPage = () => {
             console.log(err);
         }
     }
-    
+
 
     async function increaseAllowance() {
         try {
             const { ethereum } = window;
-            if(ethereum){
+            if (ethereum) {
                 const provider = new ethers.providers.Web3Provider(ethereum);
                 const signer = provider.getSigner();
-                const busdInstance = new ethers.Contract(BUSD,BUSD_ABI,signer);
+                const busdInstance = new ethers.Contract(BUSD, BUSD_ABI, signer);
                 console.log("Instance : " + busdInstance);
-                
-                let inc = await busdInstance.increaseAllowance(contract,'100000000000000000000', {value : ethers.utils.parseEther('0')});
+
+                let inc = await busdInstance.increaseAllowance(contract, '100000000000000000000', { value: ethers.utils.parseEther('0') });
 
                 await inc.wait();
                 register();
@@ -74,12 +74,12 @@ const RegisterPage = () => {
     async function register() {
         try {
             const { ethereum } = window;
-            if(ethereum){
+            if (ethereum) {
                 const provider = new ethers.providers.Web3Provider(ethereum);
                 const signer = provider.getSigner();
-                const contractinstance = new ethers.Contract(contract,contractABI,signer);
+                const contractinstance = new ethers.Contract(contract, contractABI, signer);
                 console.log("Instance : " + contractinstance);
-                let inc = await contractinstance.registration(spons, {value : ethers.utils.parseEther('0')});
+                let inc = await contractinstance.registration(spons, { value: ethers.utils.parseEther('0') });
 
                 await inc.wait();
                 console.log("Tr Hash : " + inc.hash);
@@ -98,7 +98,7 @@ const RegisterPage = () => {
     }, [])
 
     const [msg, setMsg] = useState("");
-    
+
     const [currentAccount, setCurrentAccount] = useState(null);
     return (
         <>
@@ -111,9 +111,12 @@ const RegisterPage = () => {
                             <h3>Automatic registration</h3>
                             <p>Check the ID of Your inviter. <br></br>You can edit before proceed to payment.</p>
                             <input type="text" placeholder="Enter Sponsor ID." onChange={(e) => setSponsor(e.target.value)} id="sponsor" />
-                            <button className="viewing" onClick={increaseAllowance}>To Register</button>
+                            <div className="registerButtons">
+                                <button className="viewing bgOrange">Approve</button>
+                                <button className="viewing" onClick={increaseAllowance}>Register</button>
+                            </div>
                             <p className='m-0'>Already have account?</p>
-                            { /*<Link to="/connectwallet">Login</Link>*/ }
+                            <Link id="login" to="/login">Login</Link>
                         </Col>
                         <Col md='6' className="connectRegisterRight">
                             <h3>About GLOBAL MATIC CONTRACT</h3>

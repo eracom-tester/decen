@@ -38,14 +38,14 @@ function useWindowDimensions() {
 
 const Dashboard = () => {
 
-    
+
     const [msg, setMsg] = useState("");
     const contract = useSelector((state) => state.contract.value.contract);//"0xe41C82120c8363a118A700718858A406aca63598";
     const BUSD = useSelector((state) => state.contract.value.BUSD);
     const contractABI = useSelector((state) => state.contract.value.contractABI);
     const BUSD_ABI = useSelector((state) => state.contract.value.BUSD_ABI);
 
-   
+
     const { height, width } = useWindowDimensions();
 
     function CopyToClipboard(id) {
@@ -61,7 +61,6 @@ const Dashboard = () => {
     const [sponsorAddress, setSponsorAddress] = useState(sponsorId);
     useEffect(() => {
         if (width < "1000" && contractAddress.lenght > 5 && sponsorAddress.length > 5) {
-
             var last5contract = contractAddress.slice(-4);
             var first5chart = contractAddress.substring(0, 5)
             var Sponsorfirst5chart = sponsorAddress.substring(0, 5)
@@ -113,19 +112,19 @@ const Dashboard = () => {
         //alert();
         try {
             const { ethereum } = window;
-            if(ethereum){
+            if (ethereum) {
                 const provider = new ethers.providers.Web3Provider(ethereum);
                 const signer = provider.getSigner();
-                const contractInstance = new ethers.Contract(contract,contractABI,signer);
+                const contractInstance = new ethers.Contract(contract, contractABI, signer);
                 console.log(currentAccount1);
-                
+
                 const userInfo = await contractInstance.users(currentAccount1);
                 console.log(userInfo);
                 setSponsor(userInfo.referrer);
                 setID(userInfo.id.toString());
                 setDirects(userInfo.directs.toString());
-                
-                
+
+
                 const incomes = await contractInstance.income(currentAccount1);
                 setPool1income(parseInt(incomes.p1));
                 setPool2income(parseInt(incomes.p2));
@@ -145,17 +144,17 @@ const Dashboard = () => {
         connectWalletHandler();
     }, [])
     // const [currentAccount, setCurrentAccount1] = useState('');
-    const[currentAccount1 , setCurrentAccount1] = useState("");
+    const [currentAccount1, setCurrentAccount1] = useState("");
     const [sponsor, setSponsor] = useState('');
     const [idd, setID] = useState('');
     const [directs, setDirects] = useState(0);
-    
+
     const [pool1income, setPool1income] = useState(0);
     const [pool2income, setPool2income] = useState(0);
     const [pool3income, setPool3income] = useState(0);
     const [totalincome, setTotalincome] = useState(0);
     const [genincome, setGenincome] = useState(0);
-    
+
 
 
     return (
